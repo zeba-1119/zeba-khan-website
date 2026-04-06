@@ -116,15 +116,37 @@ h4 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 }
 
 .nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.nav__logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background-color: var(--navy);
+  color: white;
   font-family: var(--font-heading);
-  font-size: 1.45rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  transition: background-color var(--transition);
+}
+.nav__logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
   font-weight: 600;
   color: var(--navy);
   letter-spacing: 0.02em;
   transition: color var(--transition);
-  flex-shrink: 0;
 }
-.nav__logo:hover { color: var(--rose); }
+.nav__logo:hover .nav__logo-mark { background-color: var(--rose); }
+.nav__logo:hover .nav__logo-text { color: var(--rose); }
 
 .nav__links {
   display: none;
@@ -229,6 +251,27 @@ h4 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 }
 @media (min-width: 768px) {
   .footer__top { grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; }
+}
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+}
+.footer__logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--rose);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
 }
 .footer__name {
   font-family: var(--font-heading);
@@ -340,6 +383,29 @@ h4 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 .img-placeholder--landscape { aspect-ratio: 16 / 9; }
 .img-placeholder--tall      { aspect-ratio: 2 / 3; }
 .img-placeholder--card      { aspect-ratio: 4 / 3; }
+
+/* =====================
+   REAL PHOTO FRAMES
+   When you replace a placeholder with an <img>, wrap it
+   in .img-frame and add a modifier for the shape you want.
+   ===================== */
+.img-frame {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+.img-frame--portrait  { aspect-ratio: 3 / 4; }
+.img-frame--square    { aspect-ratio: 1 / 1; }
+.img-frame--landscape { aspect-ratio: 16 / 9; }
+.img-frame--tall      { aspect-ratio: 2 / 3; }
+.img-frame--card      { aspect-ratio: 4 / 3; }
+.img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 
 /* =====================
    CREDENTIAL PILLS
