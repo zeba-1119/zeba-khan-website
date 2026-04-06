@@ -4,22 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Work with Me — Zeba Khan</title>
-  <meta name="description" content="Two ways to work with Zeba Khan: the Motherhood by Design cohort for high-achieving mothers returning to work, and speaking engagements on tech, leadership, and life design.">
+  <meta name="description" content="The Motherhood by Design waitlist for high-achieving mothers returning to work, and speaking engagements on tech, leadership, and life design.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Work with Zeba Khan — Cohort & Speaking">
-  <meta property="og:description" content="The Motherhood by Design Chicago cohort (5 women, in-person, limited) and keynote speaking on tech, leadership, and building a life by design.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://zebakhan.com/work-with-me.html">
-  <meta property="og:image" content="https://zebakhan.com/images/og-work.jpg">
   <meta property="og:site_name" content="Zeba Khan">
-  <meta property="og:locale" content="en_US">
-
-  <!-- Twitter Card -->
+  <meta property="og:title" content="Work with Zeba Khan — Motherhood by Design &amp; Speaking">
+  <meta property="og:description" content="Join the Motherhood by Design waitlist. Keynote speaking on tech, leadership, and building a career and life by design.">
+  <meta property="og:url" content="https://zebakhan.com/work-with-me.html">
+  <meta property="og:image" content="/images/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Work with Zeba Khan — Cohort & Speaking">
-  <meta name="twitter:description" content="The Motherhood by Design Chicago cohort and keynote speaking on tech, leadership, and life design.">
-  <meta name="twitter:image" content="https://zebakhan.com/images/og-work.jpg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +27,17 @@
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo"><span class="nav__logo-mark">ZK</span><span class="nav__logo-text">Zeba Khan</span></a>
+      <a href="index.html" class="nav__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" height="40" aria-label="Zeba Khan — Tech Leader · Founder · Speaker">
+            <text style="font-size:44px;font-weight:200;font-family:Georgia,serif;fill:#1B3557;letter-spacing:-3px" x="0" y="52">Z</text>
+            <rect x="0" y="56" width="30" height="2" rx="1" fill="#8B3A52"/>
+            <text style="font-size:44px;font-weight:700;font-family:Georgia,serif;fill:#1B3557;letter-spacing:-3px" x="28" y="52">K</text>
+            <line x1="84" y1="8" x2="84" y2="56" stroke="#D0CABE" stroke-width="0.5"/>
+            <text style="font-size:19px;font-weight:300;font-family:Georgia,serif;fill:#1B3557" x="96" y="32">Zeba Khan</text>
+            <line x1="96" y1="40" x2="290" y2="40" stroke="#D0CABE" stroke-width="0.5"/>
+            <text style="font-size:7.5px;font-family:sans-serif;fill:#8B3A52;letter-spacing:2.5px" x="96" y="54">TECH LEADER · FOUNDER · SPEAKER</text>
+          </svg>
+        </a>
       <ul class="nav__links" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -88,9 +92,9 @@
 
           <p>Returning to work after having a child isn't just a scheduling problem. It's a neurological shift, an identity reconfiguration, and a relationship renegotiation — all happening at the same time, while you're also trying to perform at a high level professionally.</p>
 
-          <p>Most support out there treats it like a logistics problem. I treat it like what it actually is.</p>
+          <p>Most support out there treats it like a logistics problem. This work treats it like what it actually is.</p>
 
-          <p>The Motherhood by Design cohort is an exclusive, in-person experience for 5 women in the Chicago area. We go deep. Mind, body, career, relationships, expectations, identity. You leave with more than a plan — you leave with clarity about who you are now, and what you're building next.</p>
+          <p>The Motherhood by Design cohort is an exclusive, in-person experience for 5 women in the Chicago area. The work goes deep — mind, body, career, relationships, expectations, identity. Members leave with more than a plan: clarity about who they are now, and what they're building next.</p>
 
           <!-- What's included -->
           <div class="wm-list">
@@ -120,10 +124,37 @@
           <div class="wm-service__investment">
             <p class="wm-service__investment-label">Investment</p>
             <p class="wm-service__investment-amount">[Price TBD — set before launch]</p>
-            <p class="wm-service__note">Applications reviewed on a rolling basis. Cohort size is intentionally small — once it's full, it's full.</p>
+            <p class="wm-service__note">Cohort size is five — spaces go to waitlist members first.</p>
           </div>
 
-          <a href="contact.html" class="btn btn--rose">Apply for the next cohort &nbsp;→</a>
+          <!-- Waitlist status badge -->
+          <div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; background:rgba(139,58,82,0.08); border:1px solid rgba(139,58,82,0.25); margin-bottom:1.5rem;">
+            <span style="width:7px;height:7px;border-radius:50%;background:var(--rose);display:inline-block;"></span>
+            <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);">Applications opening soon &nbsp;·&nbsp; Join the waitlist to be invited to apply</span>
+          </div>
+
+          <!--
+            FORMSPREE WAITLIST FORM
+            Replace YOUR_WAITLIST_FORM_ID with your Formspree form ID
+            e.g. action="https://formspree.io/f/abcdefgh"
+          -->
+          <form class="js-contact-form" action="https://formspree.io/f/YOUR_WAITLIST_FORM_ID" method="POST" novalidate style="max-width:480px;">
+            <div class="form-group">
+              <label class="form-label" for="wl-name">Your name</label>
+              <input class="form-input" type="text" id="wl-name" name="name" placeholder="First and last name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="wl-email">Your email</label>
+              <input class="form-input" type="email" id="wl-email" name="email" placeholder="you@example.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="wl-journey">Where are you in your return-to-work journey?</label>
+              <textarea class="form-textarea" id="wl-journey" name="journey" placeholder="Share as much as you'd like — this helps ensure the cohort is the right fit." style="min-height:120px;" required></textarea>
+            </div>
+            <input type="text" name="_gotcha" style="display:none">
+            <button type="submit" class="form-submit">Join the waitlist &nbsp;→</button>
+            <p class="form-note js-form-status" style="margin-top:1rem;">Cohort size is five — spaces go to waitlist members first.</p>
+          </form>
         </div>
 
         <!-- Image placeholder -->
@@ -157,14 +188,14 @@
           <h2 class="wm-service__headline">A speaker who has lived the topics she talks about.</h2>
           <div class="divider" style="margin: 1.5rem 0;"></div>
 
-          <p>I speak on the intersection of technology, leadership, and the deliberate design of a career and life. My talks are grounded in 19 years of practice — not theory — and draw on my experience as a senior leader at EY, a founder, a mother, and a woman who has navigated all of these identities simultaneously.</p>
+          <p>The talks sit at the intersection of technology, leadership, and the deliberate design of a career and life. Every session is grounded in 19 years of practice — not theory — drawing on experience as a senior leader at EY, a founder, a mother, and a woman who has navigated all of these identities at the same time.</p>
 
           <!-- Topics -->
           <div class="wm-list">
             <p class="wm-list__title">Topics</p>
             <ul>
               <li>The motherhood advantage: how having a child sharpens the skills that matter most in leadership</li>
-              <li>Designing your career architecture: building a professional life that doesn't require you to sacrifice the personal one</li>
+              <li>Designing your career architecture: building a professional life that holds the personal one without deciding between them</li>
               <li>AI and the human pace: why the real transformation challenge isn't technical, it's organizational</li>
               <li>The leaky pipeline: what organizations must do to retain mothers in tech and leadership</li>
               <li>Redesign, not balance: a new framework for ambitious women navigating multiple identities</li>
@@ -192,6 +223,16 @@
             </div>
           </div>
 
+          <!-- Past stages -->
+          <div class="wm-list" style="margin-top:2rem;">
+            <p class="wm-list__title">Past stages</p>
+            <ul>
+              <li>GitHub Universe — speaker</li>
+              <li>Women Impact Tech — featured speaker</li>
+              <li>EY global forums and panels — women in technology and leadership</li>
+            </ul>
+          </div>
+
           <div style="margin-top: 2rem;">
             <a href="contact.html?inquiry=speaking" class="btn btn--primary">Invite me to speak &nbsp;→</a>
           </div>
@@ -208,7 +249,7 @@
       <p>Whether you're applying for the cohort or inquiring about a speaking engagement — reach out and let's talk.</p>
       <div class="btn-group">
         <a href="contact.html" class="btn btn--outline-white">Get in touch &nbsp;→</a>
-        <a href="about.html" class="btn btn--outline-white">Read my story &nbsp;→</a>
+        <a href="about.html" class="btn btn--outline-white">Read the full story &nbsp;→</a>
       </div>
     </div>
   </div>
@@ -237,7 +278,6 @@
         <span class="footer__col-label">Connect</span>
         <div class="footer__social-links">
           <a href="https://linkedin.com/in/zeba-khan1" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://linkedin.com/in/zeba-khan1" target="_blank" rel="noopener noreferrer">Newsletter</a>
         </div>
       </div>
     </div>

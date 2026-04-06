@@ -14,6 +14,7 @@
   --text-body: #3D3D3D;
   --text-muted:#888888;
   --border:    #E2DDD8;
+  --pale:      #D0CABE;
   --white:     #FFFFFF;
   --navy-soft: rgba(27, 53, 87, 0.06);
 
@@ -118,35 +119,26 @@ h4 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
 .nav__logo {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
   flex-shrink: 0;
   text-decoration: none;
+  line-height: 0;
 }
-.nav__logo-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  background-color: var(--navy);
-  color: white;
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  flex-shrink: 0;
-  transition: background-color var(--transition);
+.nav__logo svg {
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: opacity var(--transition);
 }
-.nav__logo-text {
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--navy);
-  letter-spacing: 0.02em;
-  transition: color var(--transition);
+.nav__logo:hover svg { opacity: 0.75; }
+
+/* Mobile: clip SVG to show only the ZK mark (~first 80 viewBox units) */
+@media (max-width: 768px) {
+  .nav__logo svg {
+    height: 34px;
+    width: 52px;       /* 80/340 * full width ≈ shows ZK + rose bar only */
+    overflow: hidden;
+  }
 }
-.nav__logo:hover .nav__logo-mark { background-color: var(--rose); }
-.nav__logo:hover .nav__logo-text { color: var(--rose); }
 
 .nav__links {
   display: none;
