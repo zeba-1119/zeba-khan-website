@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Zeba Khan</title>
+  <meta name="description" content="Get in touch with Zeba Khan for the Motherhood by Design cohort, speaking inquiries, or to connect.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact Zeba Khan">
+  <meta property="og:description" content="Apply for the MBD cohort, book a speaking engagement, or simply connect. I read every message personally.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zebakhan.com/contact.html">
+  <meta property="og:image" content="https://zebakhan.com/images/og-contact.jpg">
+  <meta property="og:site_name" content="Zeba Khan">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Zeba Khan">
+  <meta name="twitter:description" content="Apply for the MBD cohort, book a speaking engagement, or simply connect.">
+  <meta name="twitter:image" content="https://zebakhan.com/images/og-contact.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ======================== NAV ======================== -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Zeba Khan</a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work-with-me.html">Work with Me</a></li>
+        <li><a href="work-with-me.html#speaking">Speaking</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav__mobile" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="work-with-me.html">Work with Me</a>
+  <a href="work-with-me.html#speaking">Speaking</a>
+  <a href="writing.html">Writing</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ======================== PAGE CONTENT ======================== -->
+<main class="page-content">
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <span class="eyebrow" style="margin-bottom: 1rem; display: block;">Get in touch</span>
+      <h1>Let's talk.</h1>
+      <p class="page-header__sub">Whether you're considering the cohort, looking to book a speaker, or simply want to connect — I'd love to hear from you.</p>
+    </div>
+  </header>
+
+  <!-- CONTACT LAYOUT -->
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- Left: info -->
+      <aside>
+        <h3>I read every message personally.</h3>
+        <p>I typically respond within 48 hours. If your message is time-sensitive, feel free to note that in the form.</p>
+        <p>If you're applying for the Motherhood by Design cohort, use the form to tell me where you are right now — that's the most important thing I want to know.</p>
+
+        <div class="contact-social">
+          <a href="https://linkedin.com/in/zeba-khan1" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+          <a href="https://linkedin.com/in/zeba-khan1" target="_blank" rel="noopener noreferrer">Subscribe to the newsletter</a>
+          <a href="work-with-me.html">Apply to the MBD cohort</a>
+          <a href="work-with-me.html#speaking">Speaking inquiries</a>
+        </div>
+      </aside>
+
+      <!-- Right: form -->
+      <div>
+        <!--
+          FORMSPREE SETUP:
+          1. Go to formspree.io and create a free account
+          2. Create a new form and copy your form ID
+          3. Replace YOUR_FORMSPREE_ID in the action URL below
+             e.g. action="https://formspree.io/f/abcdefgh"
+        -->
+        <form
+          class="contact-form js-contact-form"
+          action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+          method="POST"
+          novalidate
+        >
+          <!-- Name -->
+          <div class="form-group">
+            <label class="form-label" for="name">Your name</label>
+            <input
+              class="form-input"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="First and last name"
+              required
+              autocomplete="name"
+            >
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="form-label" for="email">Your email</label>
+            <input
+              class="form-input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            >
+          </div>
+
+          <!-- What brings you here -->
+          <div class="form-group">
+            <label class="form-label" for="inquiry">What brings you here?</label>
+            <select class="form-select" id="inquiry" name="inquiry" required>
+              <option value="" disabled selected>Select one…</option>
+              <option value="cohort">Cohort application</option>
+              <option value="speaking">Speaking inquiry</option>
+              <option value="connection">General connection</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Tell me about where you are -->
+          <div class="form-group">
+            <label class="form-label" for="message">Tell me a bit about where you are right now</label>
+            <textarea
+              class="form-textarea"
+              id="message"
+              name="message"
+              placeholder="Share as much or as little as you'd like. I want to understand your situation before we speak."
+              required
+            ></textarea>
+          </div>
+
+          <!-- Hidden honeypot for spam -->
+          <input type="text" name="_gotcha" style="display:none">
+
+          <button type="submit" class="form-submit">Submit &nbsp;→</button>
+
+          <!-- Status message (populated by JS) -->
+          <p class="form-note js-form-status">I read every message personally. I typically respond within 48 hours.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <p class="footer__name">Zeba Khan</p>
+        <p class="footer__tagline">Senior tech leader. Founder. Mother.<br>Designing a life by intention.</p>
+      </div>
+      <div>
+        <span class="footer__col-label">Pages</span>
+        <nav class="footer__nav-links" aria-label="Footer navigation">
+          <a href="about.html">About</a>
+          <a href="work-with-me.html">Work with Me</a>
+          <a href="work-with-me.html#speaking">Speaking</a>
+          <a href="writing.html">Writing</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <span class="footer__col-label">Connect</span>
+        <div class="footer__social-links">
+          <a href="https://linkedin.com/in/zeba-khan1" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://linkedin.com/in/zeba-khan1" target="_blank" rel="noopener noreferrer">Newsletter</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Zeba Khan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
