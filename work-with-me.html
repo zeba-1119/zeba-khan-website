@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Design Year — Motherhood by Design · Zeba Khan</title>
-  <meta name="description" content="The Design Year: a small-cohort program for ambitious mothers in the early years. Find clarity, rebuild your rhythms, and show up fully — by design. Registration closes July 31, 2026.">
+  <title>The Design Year — Founding Cohort for Ambitious Mothers · Zeba Khan</title>
+  <meta name="description" content="A 9-week founding cohort (8 seats) for ambitious mothers in the early years. Find clarity, rebuild your rhythms, and show up fully — by design. Applications close July 31, 2026.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Zeba Khan">
-  <meta property="og:title" content="The Design Year — Motherhood by Design">
-  <meta property="og:description" content="A small-cohort program for ambitious mothers in the early years. In person. In community. By design. Applications close July 31, 2026.">
+  <meta property="og:title" content="The Design Year — Founding Cohort for Ambitious Mothers · Zeba Khan">
+  <meta property="og:description" content="A 9-week founding cohort (8 seats) for ambitious mothers in the early years. Applications close July 31, 2026.">
   <meta property="og:url" content="https://auravivegroup.com/work-with-me.html">
   <meta property="og:image" content="/images/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -20,29 +20,153 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ---- Sticky mobile apply bar ---- */
+    #sticky-apply {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--navy, #1B3557);
+      color: #FAF9F7;
+      padding: 0.875rem 1.25rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 -2px 16px rgba(0,0,0,0.2);
+    }
+    @media (min-width: 768px) {
+      #sticky-apply { display: none !important; }
+    }
+    #sticky-apply__text {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: rgba(250,249,247,0.9);
+      flex: 1;
+    }
+    #sticky-apply__cta {
+      display: inline-block;
+      background: #8B3A52;
+      color: #FAF9F7;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    #sticky-apply__dismiss {
+      background: none;
+      border: none;
+      color: rgba(250,249,247,0.45);
+      font-size: 1.3rem;
+      cursor: pointer;
+      padding: 0 0.2rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    /* ---- FAQ accordion ---- */
+    .faq-list { margin: 0; padding: 0; }
+    .faq-item { border-bottom: 1px solid var(--border, #E2DDD8); }
+    .faq-item:first-child { border-top: 1px solid var(--border, #E2DDD8); }
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 1.25rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      cursor: pointer;
+      font-family: var(--font-body, 'Inter', sans-serif);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--navy, #1B3557);
+      line-height: 1.5;
+      gap: 1rem;
+    }
+    .faq-btn:hover { color: var(--rose, #8B3A52); }
+    .faq-btn__icon {
+      flex-shrink: 0;
+      font-size: 1.5rem;
+      font-weight: 200;
+      color: var(--rose, #8B3A52);
+      transition: transform 0.2s ease;
+      line-height: 1;
+      margin-top: -0.1rem;
+    }
+    .faq-btn[aria-expanded="true"] .faq-btn__icon { transform: rotate(45deg); }
+    .faq-answer {
+      padding: 0 0 1.5rem;
+      font-size: 0.9375rem;
+      color: var(--text-body, #555);
+      line-height: 1.8;
+    }
+
+    /* ---- Two-step form ---- */
+    .form-progress {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .form-progress__step {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(27,53,87,0.35);
+      white-space: nowrap;
+    }
+    .form-progress__step--active { color: var(--rose, #8B3A52); }
+    .form-progress__line {
+      flex: 1;
+      height: 1px;
+      background: var(--border, #E2DDD8);
+    }
+    .apply-success {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .apply-success__icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  </style>
 </head>
 <body>
+
+<!-- =====================================================
+     STICKY MOBILE APPLY BAR
+====================================================== -->
+<div id="sticky-apply" role="region" aria-label="Quick apply">
+  <span id="sticky-apply__text">Apply — 8 seats &nbsp;·&nbsp; Closes July 31</span>
+  <a href="#apply" id="sticky-apply__cta">Apply &nbsp;→</a>
+  <button id="sticky-apply__dismiss" aria-label="Dismiss">×</button>
+</div>
 
 <!-- ======================== NAV ======================== -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" height="40" aria-label="Zeba Khan — Tech Leader · Founder · Speaker">
-            <text style="font-size:44px;font-weight:200;font-family:Georgia,serif;fill:#1B3557;letter-spacing:-3px" x="0" y="52">Z</text>
-            <rect x="0" y="56" width="30" height="2" rx="1" fill="#8B3A52"/>
-            <text style="font-size:44px;font-weight:700;font-family:Georgia,serif;fill:#1B3557;letter-spacing:-3px" x="28" y="52">K</text>
-            <line x1="84" y1="8" x2="84" y2="56" stroke="#D0CABE" stroke-width="0.5"/>
-            <text style="font-size:27px;font-weight:300;font-family:Georgia,serif;fill:#1B3557" x="96" y="36">Zeba Khan</text>
-            <line x1="96" y1="46" x2="310" y2="46" stroke="#D0CABE" stroke-width="0.5"/>
-            <text style="font-size:8.5px;font-family:sans-serif;fill:#8B3A52;letter-spacing:2px" x="96" y="58">TECH LEADER · FOUNDER · SPEAKER</text>
-          </svg>
-        </a>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" height="40" aria-label="Zeba Khan — Tech Leader · Founder · Speaker">
+          <text style="font-size:44px;font-weight:200;font-family:Georgia,serif;fill:#1B3557;letter-spacing:-3px" x="0" y="52">Z</text>
+          <rect x="0" y="56" width="30" height="2" rx="1" fill="#8B3A52"/>
+          <text style="font-size:44px;font-weight:700;font-family:Georgia,serif;fill:#1B3557;letter-spacing:-3px" x="28" y="52">K</text>
+          <line x1="84" y1="8" x2="84" y2="56" stroke="#D0CABE" stroke-width="0.5"/>
+          <text style="font-size:27px;font-weight:300;font-family:Georgia,serif;fill:#1B3557" x="96" y="36">Zeba Khan</text>
+          <line x1="96" y1="46" x2="310" y2="46" stroke="#D0CABE" stroke-width="0.5"/>
+          <text style="font-size:8.5px;font-family:sans-serif;fill:#8B3A52;letter-spacing:2px" x="96" y="58">TECH LEADER · FOUNDER · SPEAKER</text>
+        </svg>
+      </a>
       <ul class="nav__links" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="work-with-me.html">Work with Me</a></li>
-        <li><a href="work-with-me.html#speaking">Speaking</a></li>
+        <li><a href="speaking.html">Speaking</a></li>
         <li><a href="writing.html">Writing</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -57,7 +181,7 @@
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="work-with-me.html">Work with Me</a>
-  <a href="work-with-me.html#speaking">Speaking</a>
+  <a href="speaking.html">Speaking</a>
   <a href="writing.html">Writing</a>
   <a href="contact.html">Contact</a>
 </div>
@@ -68,20 +192,20 @@
   <!-- =====================================================
        HERO
   ====================================================== -->
-  <header class="page-header">
+  <header class="page-header" id="page-top">
     <div class="container">
-      <span class="eyebrow" style="margin-bottom: 1rem; display: block;">Applications now open &nbsp;·&nbsp; Closes July 31, 2026</span>
+      <span class="eyebrow" style="margin-bottom: 1rem; display: block;">Founding Cohort &nbsp;·&nbsp; 8 Seats &nbsp;·&nbsp; Applications close July 31, 2026</span>
       <h1>You didn't lose yourself.<br>You're redesigning.</h1>
-      <p class="page-header__sub">A small-cohort program for ambitious moms in the early years — built to help you find clarity, rebuild your rhythms, and show up fully without burning out. In person. In community. By design.</p>
+      <p class="page-header__sub">A small-cohort program for ambitious moms in the early years — built to help you find clarity, rebuild your rhythms, and show up fully without burning out. In person. In community. By design. Cohort begins September 2026.</p>
       <div style="margin-top: 2rem;">
         <a href="#apply" class="btn btn--primary">Apply for The Design Year &nbsp;→</a>
-        <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-body); opacity: 0.75;">Applications are reviewed on a rolling basis. Registration closes July 31.</p>
+        <p style="margin-top: 0.875rem; font-size: 0.875rem; color: var(--text-body); opacity: 0.7;">Nothing is due until you're accepted.</p>
       </div>
     </div>
   </header>
 
   <!-- =====================================================
-       SECTION 2 — PROGRAM INTRODUCTION
+       PROGRAM INTRODUCTION
   ====================================================== -->
   <section class="wm-service">
     <div class="container">
@@ -120,7 +244,7 @@
   </section>
 
   <!-- =====================================================
-       SECTION 3 — WHO THIS IS FOR
+       WHO THIS IS FOR
   ====================================================== -->
   <section style="background: var(--navy-soft, #F0EDE8); padding: 5rem 0;">
     <div class="container">
@@ -140,16 +264,56 @@
         <p style="font-family: var(--font-heading); font-size: clamp(1.1rem, 2vw, 1.3rem); font-style: italic; color: var(--navy);">If you nodded at any of this — you belong here.</p>
 
         <div style="margin-top: 2rem;">
-          <a href="#apply" class="btn btn--primary">Apply for The Design Year &nbsp;→</a>
+          <a href="#apply" class="btn btn--primary">Apply for one of 8 seats &nbsp;→</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- =====================================================
-       SECTION 4 — WHAT'S INCLUDED
+       FOUNDING COHORT
   ====================================================== -->
   <section style="padding: 5rem 0;">
+    <div class="container">
+      <div style="max-width: 760px; margin: 0 auto;">
+        <span class="eyebrow" style="margin-bottom: 0.75rem; display: block;">Be first.</span>
+        <h2 style="margin-bottom: 0.75rem;">The Founding Cohort</h2>
+        <p style="font-size: 1.0625rem; color: var(--text-body); line-height: 1.8; margin-bottom: 3rem;">This is the first cohort. Which means the women who join aren't just participants — they're architects. Founding members receive benefits that won't be available to future cohorts.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+          <div style="padding: 1.75rem; border: 1px solid var(--border);">
+            <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem;">Benefit 01</p>
+            <h3 style="font-size: 1.1rem; color: var(--navy); margin-bottom: 0.75rem;">Founding price, locked for life</h3>
+            <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.7;">Your $2,500 rate applies to any future Design Year program you return to. The price for founding members never increases.</p>
+          </div>
+          <div style="padding: 1.75rem; border: 1px solid var(--border);">
+            <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem;">Benefit 02</p>
+            <h3 style="font-size: 1.1rem; color: var(--navy); margin-bottom: 0.75rem;">Lifetime community access</h3>
+            <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.7;">The relationships you build in this cohort extend beyond the 9 weeks. Founding members keep permanent access to the MBD community.</p>
+          </div>
+          <div style="padding: 1.75rem; border: 1px solid var(--border);">
+            <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem;">Benefit 03</p>
+            <h3 style="font-size: 1.1rem; color: var(--navy); margin-bottom: 0.75rem;">MBD App founding user</h3>
+            <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.7;">Early access to the Motherhood by Design App before public launch — and your input directly shapes the product.</p>
+          </div>
+          <div style="padding: 1.75rem; border: 1px solid var(--border);">
+            <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem;">Benefit 04</p>
+            <h3 style="font-size: 1.1rem; color: var(--navy); margin-bottom: 0.75rem;">Shape the program</h3>
+            <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.7;">Founding cohort members help determine what comes next. Your feedback directly informs how The Design Year evolves.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="#apply" class="btn btn--primary">Apply for one of 8 seats &nbsp;→</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       WHAT'S INCLUDED
+  ====================================================== -->
+  <section style="background: var(--navy-soft, #F0EDE8); padding: 5rem 0;">
     <div class="container">
       <span class="eyebrow" style="margin-bottom: 0.75rem; display: block;">What's included</span>
       <h2 style="margin-bottom: 0.75rem;">This isn't a course.</h2>
@@ -161,19 +325,19 @@
         <div style="background: var(--bg); border: 1px solid var(--border); padding: 2rem;">
           <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem;">Weekly</p>
           <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--navy);">Virtual Touchpoints</h3>
-          <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.7;">A consistent, protected touchpoint each week with your cohort and your guides. No commute required — just an hour that belongs entirely to this work and to you.</p>
+          <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.7;">A consistent, protected touchpoint each week with your cohort and your guides. No commute required — just an hour that belongs entirely to this work and to you. Approximately 2 hours per week total, including light self-work between sessions.</p>
         </div>
 
         <div style="background: var(--bg); border: 1px solid var(--border); padding: 2rem;">
           <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem;">In-Person</p>
           <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--navy);">Retreat Experiences</h3>
-          <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.7;">Immersive days in the Chicago area designed around deep work, real conversation, and the kind of reset that only happens when you're physically present with people who get it. In-person dates shared with accepted participants.</p>
+          <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.7;">Up to 4 in-person gatherings across September, October, and November in the Chicago area — immersive half-day or full-day sessions built around deep work, real conversation, and the kind of reset that only happens when you're physically present with people who get it.</p>
         </div>
 
         <div style="background: var(--bg); border: 1px solid var(--border); padding: 2rem;">
           <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem;">Curated</p>
           <h3 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--navy);">A Curated Cohort</h3>
-          <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.7;">Applications are evaluated for personal fit and alignment — not processed first-come, first-served. This will be a small group, intentionally. Because depth requires trust, and trust requires the right people in the room.</p>
+          <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.7;">Applications are evaluated for personal fit and alignment — not processed first-come, first-served. 8 seats. Because depth requires trust, and trust requires the right people in the room.</p>
         </div>
 
         <div style="background: var(--bg); border: 1px solid var(--border); padding: 2rem;">
@@ -184,34 +348,44 @@
 
       </div>
 
-      <!-- Program at a glance -->
-      <div style="background: var(--navy); padding: 2.5rem; max-width: 640px;">
+      <!-- Program at a glance — 8-row table -->
+      <div style="background: var(--navy); padding: 2.5rem; max-width: 680px;">
         <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;">Program at a glance</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem;">
-          <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.75rem;">
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem;">Duration</p>
-            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">8–12 weeks</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2.5rem;">
+
+          <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.875rem;">
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">Duration</p>
+            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">9 weeks · optional extension to 12</p>
           </div>
-          <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.75rem;">
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem;">Format</p>
-            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">Primarily in-person, Chicago + weekly virtual</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.875rem;">
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">Format</p>
+            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">Weekly virtual + in-person retreats</p>
           </div>
-          <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.75rem;">
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem;">Cohort</p>
-            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">Small and intentionally curated</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.875rem;">
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">In-person windows</p>
+            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">Sep – Nov 2026 · Chicago area</p>
           </div>
-          <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.75rem;">
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem;">Investment</p>
-            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">$2,500 — payment plan available</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.875rem;">
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">Time commitment</p>
+            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">~2 hrs/week + light self-work</p>
           </div>
-          <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.75rem;">
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem;">App access</p>
-            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">Included at no additional cost</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.875rem;">
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">Cohort</p>
+            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">8 seats · curated for fit</p>
           </div>
-          <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.75rem;">
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem;">Registration closes</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.875rem;">
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">Investment</p>
+            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">$2,500 · two-payment plan available</p>
+          </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.875rem;">
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">App &amp; community</p>
+            <p style="font-size: 0.9375rem; color: white; font-weight: 500;">Lifetime access included</p>
+          </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.875rem;">
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem;">Applications close</p>
             <p style="font-size: 0.9375rem; color: white; font-weight: 500;">July 31, 2026</p>
           </div>
+
         </div>
       </div>
 
@@ -219,9 +393,9 @@
   </section>
 
   <!-- =====================================================
-       SECTION 5 — MEET YOUR GUIDES
+       MEET YOUR GUIDES
   ====================================================== -->
-  <section style="background: var(--navy-soft, #F0EDE8); padding: 5rem 0;">
+  <section style="padding: 5rem 0;">
     <div class="container">
       <span class="eyebrow" style="margin-bottom: 0.75rem; display: block;">Your guides</span>
       <h2 style="margin-bottom: 3rem;">The people in your corner</h2>
@@ -256,9 +430,9 @@
   </section>
 
   <!-- =====================================================
-       SECTION 6 — INVESTMENT
+       INVESTMENT
   ====================================================== -->
-  <section style="padding: 5rem 0;">
+  <section style="background: var(--navy-soft, #F0EDE8); padding: 5rem 0;">
     <div class="container">
       <div style="max-width: 580px;">
         <span class="eyebrow" style="margin-bottom: 0.75rem; display: block;">Investment</span>
@@ -267,148 +441,234 @@
 
         <div class="wm-list">
           <ul>
-            <li>Full 8–12 week program access</li>
+            <li>Full 9-week program — plus optional 3-week extension at no additional cost</li>
             <li>Weekly virtual touchpoints with your cohort and guides</li>
-            <li>In-person retreat experiences in the Chicago area</li>
-            <li>Small cohort, high-touch facilitation</li>
+            <li>Up to 4 in-person retreats in the Chicago area (September–November 2026)</li>
+            <li>High-touch facilitation — 8 seats only, every participant fully supported</li>
             <li>Free lifetime access to the MBD App (founding-user early access)</li>
+            <li>Lifetime access to the MBD community beyond the program</li>
           </ul>
         </div>
 
-        <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.8; margin-top: 1.5rem; padding: 1rem 1.25rem; background: rgba(139,58,82,0.05); border-left: 3px solid var(--rose);">Prefer to split the investment? A two-installment payment plan is available — ask us when you apply.</p>
+        <div style="margin-top: 1.75rem; padding: 1.25rem 1.5rem; background: rgba(139,58,82,0.05); border-left: 3px solid var(--rose);">
+          <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.8; margin-bottom: 0.25rem;"><strong>Two-payment option available.</strong> Split the investment into $1,250 at Week 1 and $1,250 at Week 5. Just mention it when you apply.</p>
+        </div>
 
-        <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.8; margin-top: 1.5rem; font-style: italic;">Payment details are shared upon acceptance. This is an investment in the version of you that comes out the other side.</p>
+        <p style="font-size: 0.9375rem; color: var(--text-body); line-height: 1.8; margin-top: 1.25rem; font-style: italic;">Nothing is due until you're accepted. Payment details are shared upon acceptance.</p>
+
+        <p style="font-size: 0.8125rem; color: var(--text-body); opacity: 0.7; line-height: 1.7; margin-top: 0.75rem;">Refund policy: full refunds for withdrawals before the program begins; prorated refund for withdrawals in weeks 1–2; no refunds after Week 3. Full terms in the program agreement.</p>
+
+        <div style="margin-top: 2rem;">
+          <a href="#apply" class="btn btn--primary">Apply for one of 8 seats &nbsp;→</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- =====================================================
-       SECTION 7 — APPLICATION FORM
+       FAQ
+  ====================================================== -->
+  <section style="padding: 5rem 0;">
+    <div class="container">
+      <div style="max-width: 680px; margin: 0 auto;">
+        <span class="eyebrow" style="margin-bottom: 0.75rem; display: block;">FAQ</span>
+        <h2 style="margin-bottom: 2.5rem;">Questions, answered.</h2>
+
+        <div class="faq-list" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-1">
+              Who is The Design Year for?
+              <span class="faq-btn__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-1" hidden>
+              Ambitious mothers in the early years — pregnant, newly postpartum, or in the first three years of motherhood — who haven't stopped being career-oriented and want real support navigating both. Not a parenting class. Not a productivity hack. A container for the full transition: identity, career, relationships, and design.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-2">
+              What exactly happens during the 9 weeks?
+              <span class="faq-btn__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-2" hidden>
+              Each week includes a protected virtual touchpoint with your cohort and guides — typically 60–90 minutes. Topics move through the full arc: identity, relationships, career architecture, boundaries, rhythms, and forward design. Three to four of those weeks include an in-person gathering in the Chicago area for deeper work. Expect roughly 2 hours per week, including light self-work between sessions.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-3">
+              What's the optional extension (weeks 10–12)?
+              <span class="faq-btn__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-3" hidden>
+              Weeks 10–12 are available to all cohort members at no additional cost. They're designed for implementation — taking what you designed in the first 9 weeks and integrating it into your actual life. Not all participants use them, but they're there if you need more runway.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-4">
+              Where are the in-person gatherings?
+              <span class="faq-btn__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-4" hidden>
+              In the Chicago area. Exact locations and logistics are confirmed with accepted participants before the cohort begins. We aim to keep travel minimal — typically within the city or close suburbs, accessible by transit.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-5">
+              What if I can't make an in-person session?
+              <span class="faq-btn__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-5" hidden>
+              Life with a young child means schedules shift — we build flexibility into the program. If you miss an in-person session, the virtual component continues uninterrupted and session materials are shared. Consistent in-person attendance adds significant value and is encouraged, but it is not a strict requirement for participation.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-6">
+              What's your refund policy?
+              <span class="faq-btn__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-6" hidden>
+              We offer a full refund for withdrawals before the program begins. For withdrawals during weeks 1–2, a prorated refund is available. After Week 3, no refunds are issued. Full terms are included in the program agreement shared with accepted participants. Nothing is due until you're accepted.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-7">
+              Is there a payment plan?
+              <span class="faq-btn__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-7" hidden>
+              Yes. A two-payment option splits the $2,500 into $1,250 at Week 1 and $1,250 at Week 5. Just mention it in your application and we'll include payment details in your acceptance.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-8">
+              How are applicants selected?
+              <span class="faq-btn__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-8" hidden>
+              Applications are reviewed for personal fit, alignment to program goals, and cohort chemistry — not first-come, first-served. With only 8 seats, every application matters and every seat is chosen deliberately. There are no wrong answers in the application. We're looking for women who are ready.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-9">
+              When will I hear back?
+              <span class="faq-btn__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-9" hidden>
+              Within 5–7 business days of applying. Applications close July 31, 2026. If the 8 seats fill before then, we'll close applications early and notify everyone on the list.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       APPLICATION FORM — TWO-STEP
   ====================================================== -->
   <section id="apply" style="background: var(--navy-soft, #F0EDE8); padding: 5rem 0;">
     <div class="container">
       <div style="max-width: 580px;">
         <span class="eyebrow" style="margin-bottom: 0.75rem; display: block;">Apply</span>
         <h2 style="margin-bottom: 0.75rem;">Apply for The Design Year</h2>
-        <p style="font-size: 1.0625rem; color: var(--text-body); line-height: 1.8; margin-bottom: 2.5rem;">This program is intentionally small. Applications are reviewed for personal fit and alignment to your goals — not on a first-come, first-served basis. There are no wrong answers. We're looking for women who are ready.</p>
+        <p style="font-size: 1.0625rem; color: var(--text-body); line-height: 1.8; margin-bottom: 2rem;">This program is intentionally small — 8 seats, curated for fit. Applications are reviewed for personal alignment, not processed in order. There are no wrong answers. We're looking for women who are ready.</p>
 
         <!-- Registration open badge -->
-        <div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; background:rgba(139,58,82,0.08); border:1px solid rgba(139,58,82,0.25); margin-bottom:2rem;">
-          <span style="width:7px;height:7px;border-radius:50%;background:var(--rose);display:inline-block;"></span>
-          <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);">Registration open &nbsp;·&nbsp; Cohort: Late Aug / Early Sep 2026</span>
+        <div style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; background:rgba(139,58,82,0.08); border:1px solid rgba(139,58,82,0.25); margin-bottom:2.5rem;">
+          <span style="width:7px;height:7px;border-radius:50%;background:var(--rose);display:inline-block;flex-shrink:0;"></span>
+          <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);">Registration open &nbsp;·&nbsp; Cohort begins September 2026</span>
         </div>
 
-        <form class="js-contact-form" action="https://formspree.io/f/xqewngly" method="POST" novalidate>
-          <div class="form-group">
-            <label class="form-label" for="wl-name">Your name</label>
-            <input class="form-input" type="text" id="wl-name" name="name" placeholder="First and last name" required autocomplete="name">
+        <!-- STEP 1 -->
+        <div id="apply-step1">
+          <div class="form-progress">
+            <span class="form-progress__step form-progress__step--active">Step 1 of 2</span>
+            <div class="form-progress__line"></div>
+            <span class="form-progress__step">Step 2 of 2</span>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="wl-email">Your email</label>
-            <input class="form-input" type="email" id="wl-email" name="email" placeholder="you@example.com" required autocomplete="email">
+
+          <form id="apply-form-1" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="a-name">Your name</label>
+              <input class="form-input" type="text" id="a-name" name="name" placeholder="First and last name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="a-email">Your email</label>
+              <input class="form-input" type="email" id="a-email" name="email" placeholder="you@example.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="a-journey">Where are you in your journey?</label>
+              <select class="form-select" id="a-journey" name="journey" required>
+                <option value="" disabled selected>Select one…</option>
+                <option value="pregnant">Pregnant</option>
+                <option value="postpartum-under-1">Postpartum — under 1 year</option>
+                <option value="postpartum-1-3">Postpartum — 1–3 years</option>
+                <option value="returning-to-work">Returning to work</option>
+              </select>
+            </div>
+            <input type="text" name="_gotcha" style="display:none">
+            <button type="submit" class="form-submit">Continue &nbsp;→</button>
+          </form>
+        </div>
+
+        <!-- STEP 2 (hidden until step 1 complete) -->
+        <div id="apply-step2" hidden>
+          <div class="form-progress">
+            <span class="form-progress__step">Step 1 of 2</span>
+            <div class="form-progress__line"></div>
+            <span class="form-progress__step form-progress__step--active">Step 2 of 2</span>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="wl-journey">Where are you in your motherhood journey?</label>
-            <textarea class="form-textarea" id="wl-journey" name="journey" placeholder="Share as much as you'd like — this helps ensure the cohort is the right fit." style="min-height:120px;" required></textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="wl-walkaway">What are you hoping to walk away with?</label>
-            <textarea class="form-textarea" id="wl-walkaway" name="walkaway" placeholder="What does success look like for you at the end of this program?" style="min-height:100px;" required></textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="wl-win">What does a win look like for you 3 months from now?</label>
-            <textarea class="form-textarea" id="wl-win" name="win" placeholder="Be as specific as you'd like." style="min-height:100px;" required></textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="wl-other">Anything else you'd like us to know? <span style="font-weight:400; opacity:0.6;">(optional)</span></label>
-            <textarea class="form-textarea" id="wl-other" name="other" placeholder="Anything at all." style="min-height:80px;"></textarea>
-          </div>
-          <input type="text" name="_gotcha" style="display:none">
-          <button type="submit" class="form-submit">Apply now &nbsp;→</button>
-          <p class="form-note js-form-status" style="margin-top:1rem;">Applications close July 31. We'll be in touch within 5–7 business days.</p>
-        </form>
+
+          <form id="apply-form-2" action="https://formspree.io/f/xqewngly" method="POST" novalidate>
+            <!-- Carried-over hidden fields -->
+            <input type="hidden" id="a2-name" name="name">
+            <input type="hidden" id="a2-email" name="email">
+            <input type="hidden" id="a2-journey" name="journey">
+            <input type="hidden" name="stage" value="complete">
+
+            <div class="form-group">
+              <label class="form-label" for="a-walkaway">What are you hoping to walk away with?</label>
+              <textarea class="form-textarea" id="a-walkaway" name="walkaway" placeholder="What does success look like for you at the end of this program?" style="min-height:120px;" required></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="a-other">Anything else you'd like us to know? <span style="font-weight:400;opacity:0.6;">(optional)</span></label>
+              <textarea class="form-textarea" id="a-other" name="other" placeholder="Anything at all." style="min-height:80px;"></textarea>
+            </div>
+            <input type="text" name="_gotcha" style="display:none">
+            <button type="submit" class="form-submit" id="apply-submit-btn">Submit application &nbsp;→</button>
+            <p class="form-note js-form-status" id="apply-form-status" style="margin-top:1rem;">Applications close July 31. We'll be in touch within 5–7 business days.</p>
+          </form>
+        </div>
+
+        <!-- SUCCESS STATE (hidden until submitted) -->
+        <div id="apply-success" hidden class="apply-success">
+          <div class="apply-success__icon">✓</div>
+          <h3>Application received.</h3>
+          <p>Thank you for applying to The Design Year. We'll review your application and be in touch within 5–7 business days. Check your inbox — and your spam folder, just in case.</p>
+          <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.7;">Questions in the meantime? <a href="contact.html" style="color:var(--rose);">Reach out here.</a></p>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- =====================================================
-       SERVICE 2 — Speaking
+       FINAL CTA BAND
   ====================================================== -->
-  <section class="wm-service" id="speaking">
-    <div class="container">
-      <div class="wm-service__grid">
-
-        <!-- Image (left on desktop) -->
-        <div style="order: 2;">
-          <div class="img-frame img-frame--portrait">
-            <img src="images/zeba-speaker.jpg" alt="Zeba Khan — Speaker">
-          </div>
-        </div>
-
-        <!-- Content (right on desktop) -->
-        <div class="wm-service__body" style="order: 1;">
-          <span class="wm-service__tag">Keynote &nbsp;·&nbsp; Panel &nbsp;·&nbsp; Workshop &nbsp;·&nbsp; Podcast</span>
-          <h2 class="wm-service__headline">A speaker who has lived the topics she talks about.</h2>
-          <div class="divider" style="margin: 1.5rem 0;"></div>
-
-          <p>The talks sit at the intersection of technology, leadership, and the deliberate design of a career and life. Every session is grounded in 19 years of practice — not theory — drawing on experience as a senior leader at EY, a founder, a mother, and a woman who has navigated all of these identities at the same time.</p>
-
-          <div class="wm-list">
-            <p class="wm-list__title">Topics</p>
-            <ul>
-              <li>The motherhood advantage: how having a child sharpens the skills that matter most in leadership</li>
-              <li>Designing your career architecture: building a professional life that holds the personal one without deciding between them</li>
-              <li>AI and the human pace: why the real transformation challenge isn't technical, it's organizational</li>
-              <li>The leaky pipeline: what organizations must do to retain mothers in tech and leadership</li>
-              <li>Redesign, not balance: a new framework for ambitious women navigating multiple identities</li>
-            </ul>
-          </div>
-
-          <p class="wm-list__title" style="margin-bottom: 0.75rem;">Speaking formats</p>
-          <div class="speaking-formats">
-            <div class="speaking-format">
-              <p class="speaking-format__title">Keynote</p>
-              <p class="speaking-format__detail">45–60 minutes</p>
-            </div>
-            <div class="speaking-format">
-              <p class="speaking-format__title">Panel &amp; Roundtable</p>
-              <p class="speaking-format__detail">Flexible duration</p>
-            </div>
-            <div class="speaking-format">
-              <p class="speaking-format__title">Workshop</p>
-              <p class="speaking-format__detail">Half-day format</p>
-            </div>
-            <div class="speaking-format">
-              <p class="speaking-format__title">Podcast Guest</p>
-              <p class="speaking-format__detail">Interview format</p>
-            </div>
-          </div>
-
-          <div class="wm-list" style="margin-top:2rem;">
-            <p class="wm-list__title">Past stages</p>
-            <ul>
-              <li>GitHub Universe — speaker</li>
-              <li>Women Impact Tech — featured speaker</li>
-              <li>EY global forums and panels — women in technology and leadership</li>
-            </ul>
-          </div>
-
-          <div style="margin-top: 2rem;">
-            <a href="contact.html?inquiry=speaking" class="btn btn--primary">Invite me to speak &nbsp;→</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
   <div class="cta-banner">
     <div class="container">
-      <h2>Ready to apply?</h2>
-      <p>Registration closes July 31. Applications are reviewed on a rolling basis — the sooner you apply, the better.</p>
+      <h2>8 seats. Applications close July 31.</h2>
+      <p>The sooner you apply, the sooner we can confirm your seat. Nothing is due until you're accepted.</p>
       <div class="btn-group">
-        <a href="#apply" class="btn btn--outline-white">Apply for The Design Year &nbsp;→</a>
+        <a href="#apply" class="btn btn--outline-white">Apply now &nbsp;→</a>
         <a href="contact.html" class="btn btn--outline-white">Get in touch &nbsp;→</a>
       </div>
     </div>
@@ -429,7 +689,7 @@
         <nav class="footer__nav-links" aria-label="Footer navigation">
           <a href="about.html">About</a>
           <a href="work-with-me.html">Work with Me</a>
-          <a href="work-with-me.html#speaking">Speaking</a>
+          <a href="speaking.html">Speaking</a>
           <a href="writing.html">Writing</a>
           <a href="contact.html">Contact</a>
         </nav>
@@ -448,5 +708,137 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<script>
+  // ---- #speaking redirect ----
+  if (window.location.hash === '#speaking') {
+    window.location.replace('speaking.html');
+  }
+
+  // ---- FAQ accordion ----
+  document.querySelectorAll('.faq-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      var answerId = this.getAttribute('aria-controls');
+      var answer = document.getElementById(answerId);
+      if (answer) answer.hidden = expanded;
+    });
+  });
+
+  // ---- Sticky mobile apply bar ----
+  (function() {
+    var bar = document.getElementById('sticky-apply');
+    var dismissBtn = document.getElementById('sticky-apply__dismiss');
+    var hero = document.getElementById('page-top');
+    var applySection = document.getElementById('apply');
+    var dismissed = sessionStorage.getItem('sticky-dismissed');
+
+    if (!bar || !hero || !applySection) return;
+    if (dismissed) return;
+
+    dismissBtn && dismissBtn.addEventListener('click', function() {
+      bar.style.display = 'none';
+      sessionStorage.setItem('sticky-dismissed', '1');
+    });
+
+    window.addEventListener('scroll', function() {
+      if (sessionStorage.getItem('sticky-dismissed')) return;
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      var formRect = applySection.getBoundingClientRect();
+      var formInView = formRect.top < window.innerHeight && formRect.bottom > 0;
+      if (heroBottom < 0 && !formInView) {
+        bar.style.display = 'flex';
+      } else {
+        bar.style.display = 'none';
+      }
+    }, { passive: true });
+  })();
+
+  // ---- Two-step application form ----
+  (function() {
+    var step1 = document.getElementById('apply-step1');
+    var step2 = document.getElementById('apply-step2');
+    var successDiv = document.getElementById('apply-success');
+    var form1 = document.getElementById('apply-form-1');
+    var form2 = document.getElementById('apply-form-2');
+    var statusEl = document.getElementById('apply-form-status');
+    var submitBtn = document.getElementById('apply-submit-btn');
+
+    if (!form1 || !form2) return;
+
+    // Step 1: capture partial lead, advance to step 2
+    form1.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var nameVal = document.getElementById('a-name').value.trim();
+      var emailVal = document.getElementById('a-email').value.trim();
+      var journeyVal = document.getElementById('a-journey').value;
+
+      if (!nameVal || !emailVal || !journeyVal) {
+        return;
+      }
+
+      // POST partial to Formspree (fire-and-forget; no UX block on failure)
+      var partial = new FormData();
+      partial.append('name', nameVal);
+      partial.append('email', emailVal);
+      partial.append('journey', journeyVal);
+      partial.append('stage', 'partial');
+      fetch('https://formspree.io/f/xqewngly', {
+        method: 'POST',
+        body: partial,
+        headers: { 'Accept': 'application/json' }
+      }).catch(function() {});
+
+      // Carry values into step 2
+      document.getElementById('a2-name').value = nameVal;
+      document.getElementById('a2-email').value = emailVal;
+      document.getElementById('a2-journey').value = journeyVal;
+
+      // Advance
+      step1.hidden = true;
+      step2.hidden = false;
+      window.scrollTo({ top: document.getElementById('apply').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    // Step 2: full submission
+    form2.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var walkaway = document.getElementById('a-walkaway').value.trim();
+      if (!walkaway) return;
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting…';
+      }
+      if (statusEl) statusEl.textContent = '';
+
+      var data = new FormData(form2);
+      fetch('https://formspree.io/f/xqewngly', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(res) {
+        if (res.ok) {
+          step2.hidden = true;
+          successDiv.hidden = false;
+          window.scrollTo({ top: document.getElementById('apply').offsetTop - 80, behavior: 'smooth' });
+        } else {
+          return res.json().then(function(json) {
+            var msg = (json.errors && json.errors.map(function(e){return e.message;}).join(', ')) || 'Something went wrong — please try again.';
+            if (statusEl) statusEl.textContent = msg;
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit application →'; }
+          });
+        }
+      })
+      .catch(function() {
+        if (statusEl) statusEl.textContent = 'Something went wrong — please try again.';
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit application →'; }
+      });
+    });
+  })();
+</script>
+
 </body>
 </html>
